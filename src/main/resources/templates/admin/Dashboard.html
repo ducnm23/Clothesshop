@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../css/dist/my_style.css">
+    <link rel="stylesheet" href="../css/dist/styles.css">
+    <link rel="stylesheet" href="../css/dist/all.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i,700,700i" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+<div id="toast"></div>
+<div class="mx-auto bg-grey-400">
+
+    <!--Screen-->
+    <div class="min-h-screen flex flex-col">
+        <!--Header Section Starts Here-->
+        <header class="bg-nav">
+            <div class="flex justify-between">
+                <div class="p-1 mx-3 inline-flex items-center">
+                    <i class="fas fa-bars pr-2 text-white" onclick="sidebarToggle()"></i>
+                    <h1 class="text-white p-2">Logo</h1>
+                </div>
+                <div class="p-1 flex flex-row items-center">
+                    <a href="https://github.com/tailwindadmin/admin" class="text-white p-2 mr-2 no-underline hidden md:block lg:block">Github</a>
+
+
+                    <img onclick="profileToggle()" class="inline-block h-8 w-8 rounded-full" src="https://avatars0.githubusercontent.com/u/4323180?s=460&v=4" alt="">
+                    <a href="#" onclick="profileToggle()" class="text-white p-2 no-underline hidden md:block lg:block">Adam Wathan</a>
+                    <div id="ProfileDropDown" class="rounded hidden shadow-md bg-white absolute pin-t mt-12 mr-1 pin-r">
+                        <ul class="list-reset">
+                            <li><a href="#" class="no-underline px-4 py-2 block text-black hover:bg-grey-light">My account</a></li>
+                            <li><a href="#" class="no-underline px-4 py-2 block text-black hover:bg-grey-light">Notifications</a></li>
+                            <li><hr class="border-t mx-2 border-grey-ligght"></li>
+                            <li><a href="#" class="no-underline px-4 py-2 block text-black hover:bg-grey-light">Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!--/Header-->
+
+        <div class="flex flex-1">
+            <!--Sidebar-->
+            <aside id="sidebar" class="bg-side-nav w-1/2 md:w-1/6 lg:w-1/6 border-r border-side-nav hidden md:block lg:block">
+
+                <ul class="list-reset flex flex-col">
+                    <li class=" w-full h-full py-3 px-2 border-b border-light-border bg-white">
+                        <a href="index.html"
+                           class="font-sans font-hairline hover:font-normal text-sm text-nav-item no-underline">
+                            <i class="fas fa-tachometer-alt float-left mx-2"></i>
+                            Dashboard
+                            <span><i class="fas fa-angle-right float-right"></i></span>
+                        </a>
+                    </li>
+                    <li id="cate_1" class="w-full h-full py-3 px-2 border-b border-light-border">
+                        <a
+                           class="font-sans font-hairline hover:font-normal text-sm text-nav-item no-underline">
+                            <i class="fab fa-wpforms float-left mx-2"></i>
+                            QL danh mục
+                            <span><i class="fa fa-angle-right float-right"></i></span>
+                        </a>
+                    </li>
+                    <li id="cate_2" class="w-full h-full py-3 px-2 border-b border-light-border">
+                        <a
+                           class="font-sans font-hairline hover:font-normal text-sm text-nav-item no-underline">
+                            <i class="fab fa-wpforms float-left mx-2"></i>
+                            QL SubCategory
+                            <span><i class="fa fa-angle-right float-right"></i></span>
+                        </a>
+                    </li>
+
+                </ul>
+                </li>
+                </ul>
+
+            </aside>
+            <!--/Sidebar-->
+            <!--Main-->
+            <main class="bg-white-300 flex-1 p-3 overflow-hidden">
+
+                <div class="flex flex-col">
+                    <!-- Stats Row Starts Here -->
+                    <div class="flex flex-1 flex-col md:flex-row lg:flex-row mx-2">
+                        <div class="shadow-lg bg-red-vibrant border-l-8 hover:bg-red-vibrant-dark border-red-vibrant-dark mb-2 p-2 md:w-1/4 mx-2">
+                            <div class="p-4 flex flex-col">
+                                <a href="#" class="no-underline text-white text-2xl">
+                                    $244
+                                </a>
+                                <a href="#" class="no-underline text-white text-lg">
+                                    Total Sales
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="shadow bg-info border-l-8 hover:bg-info-dark border-info-dark mb-2 p-2 md:w-1/4 mx-2">
+                            <div class="p-4 flex flex-col">
+                                <a href="#" class="no-underline text-white text-2xl">
+                                    $199.4
+                                </a>
+                                <a href="#" class="no-underline text-white text-lg">
+                                    Total Cost
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="shadow bg-warning border-l-8 hover:bg-warning-dark border-warning-dark mb-2 p-2 md:w-1/4 mx-2">
+                            <div class="p-4 flex flex-col">
+                                <a href="#" class="no-underline text-white text-2xl">
+                                    900
+                                </a>
+                                <a href="#" class="no-underline text-white text-lg">
+                                    Total Users
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="shadow bg-success border-l-8 hover:bg-success-dark border-success-dark mb-2 p-2 md:w-1/4 mx-2">
+                            <div class="p-4 flex flex-col">
+                                <a href="#" class="no-underline text-white text-2xl">
+                                    500
+                                </a>
+                                <a href="#" class="no-underline text-white text-lg">
+                                    Total Products
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /Stats Row Ends Here -->
+
+                    <!-- Card Sextion Starts Here -->
+
+                    <div class="flex-1 flex-col md:flex-row lg:flex-row mx-2">
+                        <div class="row" style="text-align: end;">
+                            <button data-modal='centeredFormModal'
+                                    class="modal-trigger bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                                Add
+                            </button>
+                            <button onclick="showSuccessToast()"
+                                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                                Test toast
+                            </button>
+                        </div>
+
+                        <!-- card -->
+                        <div class="content w-full"></div>
+                        <!-- /card -->
+
+                    </div>
+                    <!-- /Cards Section Ends Here -->
+
+                    <!-- Progress Bar -->
+
+                    <!--Profile Tabs-->
+
+                    <!--/Profile Tabs-->
+                </div>
+            </main>
+            <!--/Main-->
+        </div>
+        <!--Footer-->
+        <footer class="bg-grey-darkest text-white p-2">
+            <div class="flex flex-1 mx-auto">&copy; My Design</div>
+            <div class="flex flex-1 mx-auto">Distributed by:  <a href="https://themewagon.com/" target=" _blank">Themewagon</a></div>
+        </footer>
+        <!--/footer-->
+
+    </div>
+    <div id='centeredFormModal' class="modal-wrapper">
+        <div class="overlay close-modal"></div>
+        <div class="modal modal-centered">
+            <div class="modal-content shadow-lg p-5">
+                <div class="border-b p-2 pb-3 pt-0 mb-4">
+                    <div class="flex justify-between items-center">
+                        Them moi Category
+                        <span class='close-modal cursor-pointer px-3 py-1 rounded-full bg-gray-100 hover:bg-gray-200'>
+                        <i class="fas fa-times text-gray-700"></i>
+                    </span>
+                    </div>
+                </div>
+                <!-- Modal content -->
+                <form action="" id='form_add_category' class="w-full">
+
+                    <div class="flex flex-wrap -mx-3 mb-6">
+                        <div class="w-full px-3">
+                            <label class="block uppercase tracking-wide text-grey-darker text-xs font-light mb-1" for="grid-password">
+                                Ten Category
+                            </label>
+                            <input
+                                    class="name_cate appearance-none block w-full bg-grey-200 text-grey-darker border border-grey-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-grey"
+                                    id="grid-password" type="text" >
+                        </div>
+                        <div class="w-full px-3">
+                        <label class="block uppercase tracking-wide text-grey-darker text-xs font-light mb-1" for="grid-password">
+                            Trang thai
+                        </label>
+                            <select
+                                    class="status_cate block appearance-none w-full bg-grey-200 border border-grey-200 text-grey-darker py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-grey"
+                                    id="grid-state">
+                                <option value="0">Enable</option>
+                                <option value="1">Disable</option>
+                            </select>
+                    </div>
+                    </div>
+
+
+                    <div class="mt-5">
+                        <button class='close-modal bg-green-500 hover:bg-green-800 text-white font-bold py-2 px-4 rounded'> Submit </button>
+                        <span class='close-modal cursor-pointer bg-red-200 hover:bg-red-500 text-red-900 font-bold py-2 px-4 rounded'>
+                        Close
+                    </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../js/main.js"></script>
+<script>
+    function showSuccessToast(){
+        toast({
+            title: "Thanh cong!",
+            message: "Ban da dang ky thanh cong",
+            type:  "success",
+            duration:5000
+        });
+    }
+
+    function showErrorToast() {
+        toast({
+            title: "That bai!",
+            message: "Co loi xay ra",
+            type: "error",
+            duration: 5000
+        });
+    }
+
+    function toast({ title = "", message = "", type = "info", duration = 3000 }) {
+        const main = document.getElementById("toast");
+        if (main) {
+            const toast = document.createElement("div");
+
+            // Auto remove toast
+            const autoRemoveId = setTimeout(function () {
+                main.removeChild(toast);
+            }, duration + 1000);
+
+            // Remove toast when clicked
+            toast.onclick = function (e) {
+                if (e.target.closest(".toast__close")) {
+                    main.removeChild(toast);
+                    clearTimeout(autoRemoveId);
+                }
+            };
+
+            const icons = {
+                success: "fas fa-check-circle",
+                info: "fas fa-info-circle",
+                warning: "fas fa-exclamation-circle",
+                error: "fas fa-exclamation-circle"
+            };
+            const icon = icons[type];
+            const delay = (duration / 1000).toFixed(2);
+
+            toast.classList.add("toast", `toast--${type}`);
+            toast.style.animation = `slideInLeft ease .3s, fadeOut linear 1s ${delay}s forwards`;
+
+            toast.innerHTML = `
+                    <div class="toast__icon">
+                        <i class="${icon}"></i>
+                    </div>
+                    <div class="toast__body">
+                        <h3 class="toast__title">${title}</h3>
+                        <p class="toast__msg">${message}</p>
+                    </div>
+                    <div class="toast__close">
+                        <i class="fas fa-times"></i>
+                    </div>
+                `;
+            main.appendChild(toast);
+        }
+    }
+</script>
+<script>
+    function getAll(){
+        let CORS = 'http://localhost:8080/category/getAll';
+        $.ajax({
+            url: CORS,
+            dataType:"json",
+            type:"GET",
+            success: function (data, status){
+                console.log(data);
+                let html="";
+                for (let s in data) {
+                    console.log(data[s]);
+                    html +=  ' <tr>'
+                        +           ' <th scope="row" >'+data[s].id+'</th>'
+                        +           ' <td>'+data[s].name+'</td>'
+                        +    '<td>'+((data[s].status==0)?"Enable":"Disable")+'</td>'
+                        +     '  </tr>'
+                }
+                $(".content").html("");
+                var content ="";
+                content += '<div class="rounded overflow-hidden shadow bg-white mx-2 w-full">'
+                    +  '<div class="px-6 py-2 border-b border-light-grey">'
+                    +    '<div class="font-bold text-xl">Quan ly Category</div>'
+                    + '</div>'
+                    +   '<div class="table-responsive">'
+                    +       ' <table class="table text-grey-darkest">'
+                    +   ' <thead class="bg-grey-dark text-white text-normal">'
+                    +    '<tr>'
+                    +      '<th scope="col">#</th>'
+                    +     '  <th scope="col">Name</th>'
+                    +     '  <th scope="col">Status</th>'
+                    +   '</tr>'
+                    +  '</thead>'
+                    +   '<tbody>'
+                    +        html
+                    +            '</tbody>'
+                    +    '</table>'
+                    +   '</div>'
+                    +'</div>'
+                $(".content").append(content);
+            }
+        });
+    }
+    $('li>a').click(function (){
+        $('li').removeClass("bg-white");
+        $(this).parent().addClass('bg-white');
+        let name_category = ($(this).parent().attr("id"));
+        switch (name_category){
+            case "cate_1":
+                let data_cate ;
+                getAll();
+                break;
+            case "cate_2":
+                $(".content").html("");
+                var content ="";
+                content += '<div class="rounded overflow-hidden shadow bg-white mx-2 w-full">'
+                    +  '<div class="px-6 py-2 border-b border-light-grey">'
+                    +    '<div class="font-bold text-xl">Quan ly SubCategory</div>'
+                    + '</div>'
+                    +   '<div class="table-responsive">'
+                    +       ' <table class="table text-grey-darkest">'
+                    +   ' <thead class="bg-grey-dark text-white text-normal">'
+                    +    '<tr>'
+                    +      '<th scope="col">#</th>'
+                    +     '  <th scope="col">Name</th>'
+                    +     '  <th scope="col">Status</th>'
+                    +   '</tr>'
+                    +  '</thead>'
+                    +   '<tbody>'
+                    +       ' <tr>'
+                    +           ' <th scope="row">1</th>'
+                    +           ' <td>'
+                    +         '<button class="bg-blue-500 hover:bg-blue-800 text-white font-light py-1 px-2 rounded-full">'
+                    +       '  Twitter'
+                    +           '   </button>'
+                    + '</td>'
+                    +    '<td>4500</td>'
+                    +     '  </tr>'
+
+                    +            '</tbody>'
+                    +    '</table>'
+                    +   '</div>'
+                    +'</div>'
+                $(".content").append(content);
+                break;
+        }
+    });
+
+
+</script>
+<script>
+    $(document).ready(function (){
+        $("#form_add_category").submit(function (e){
+            e.preventDefault();
+            let CORS = 'http://localhost:8080/category/add-category';
+            let name = $(".name_cate").val();
+            let status = $(".status_cate").val();
+            let data = {name:name,status:status}
+            console.log(name+status);
+            $.ajax({
+                url: CORS,
+                data:data,
+                dataType:"text",
+                type:"post",
+                success: function (data, status) {
+                   $(".name_cate").val("");
+                    $(".status_cate").val(0);
+                    console.log(data)
+                    showSuccessToast();
+                    getAll();
+                    document.querySelectorAll('.close-modal').forEach(btn => {
+                        toggleModal('remove', btn);
+                    });
+                },error: function (){
+                    showErrorToast();
+            }
+        });
+        })
+        })
+</script>
+</body>
+</html>
